@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OCR Result</title>
+</head>
+<body>
+<h1>OCR Result</h1>
+<textarea rows="20" cols="80" readonly>{{ text }}</textarea><br>
+<a href="{{ url_for('download_text', sid=sid) }}">Download Text</a>
+</body>
+</html>
