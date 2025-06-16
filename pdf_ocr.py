@@ -4,7 +4,6 @@ from pdf2image import convert_from_path
 from PIL import Image
 import pytesseract
 
-
 def pdf_to_images(pdf_path, out_dir):
     images = convert_from_path(pdf_path)
     os.makedirs(out_dir, exist_ok=True)
