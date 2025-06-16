@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PDF Preview</title>
+</head>
+<body>
+<h1>PDF Preview</h1>
+<img src="{{ url_for('uploaded_file', sid=sid, filename=first_image) }}" style="max-width:100%;" alt="preview">
+<form method="post">
+    <label for="lang">OCR Model:</label>
+    <select name="lang" id="lang">
+        <option value="eng">English</option>
+        <option value="deu" selected>Deutsch</option>
+    </select>
+    <button type="submit">Start OCR</button>
+</form>
+</body>
+</html>
