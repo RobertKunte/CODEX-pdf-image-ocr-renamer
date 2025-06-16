@@ -1,6 +1,6 @@
 # PDF OCR App
 
-A small command line tool to convert PDF files to images and extract text using Tesseract OCR.
+A small command line tool to convert PDF files to images and extract text. The default OCR engine is Tesseract but two Hugging Face models are also supported.
 
 ## Requirements
 
@@ -8,19 +8,20 @@ A small command line tool to convert PDF files to images and extract text using 
 - [pdf2image](https://pypi.org/project/pdf2image/)
 - [Pillow](https://pypi.org/project/Pillow/)
 - [pytesseract](https://pypi.org/project/pytesseract/)
+- [transformers](https://pypi.org/project/transformers/) and [torch](https://pypi.org/project/torch/) for the optional Hugging Face models
 - Tesseract OCR installed on your system
 - Poppler utilities for PDF rendering
 
 Install the Python dependencies via pip:
 
 ```bash
-pip install pdf2image Pillow pytesseract
+pip install -r requirements.txt
 ```
 
 ## Usage
 
 ```bash
-python pdf_ocr.py <file.pdf> --out-dir output --lang deu
+python pdf_ocr.py <file.pdf> --out-dir output --lang deu --engine tesseract
 ```
 
 All pages of the PDF will be saved as JPG images in the output folder. The recognized text is printed to the console and written to `output/output.txt`.

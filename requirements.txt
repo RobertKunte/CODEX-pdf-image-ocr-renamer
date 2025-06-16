@@ -2,3 +2,5 @@ pdf2image
 Pillow
 pytesseract
 Flask
+torch
+transformers

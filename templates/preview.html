@@ -8,7 +8,14 @@
 <h1>PDF Preview</h1>
 <img src="{{ url_for('uploaded_file', sid=sid, filename=first_image) }}" style="max-width:100%;" alt="preview">
 <form method="post">
-    <label for="lang">OCR Model:</label>
+    <label for="engine">OCR Engine:</label>
+    <select name="engine" id="engine">
+        <option value="tesseract" selected>Tesseract</option>
+        <option value="qwen2">Qwen2-VL-OCR-2B-Instruct</option>
+        <option value="rolmocr">RolmOCR</option>
+    </select>
+    <br>
+    <label for="lang">Language (Tesseract only):</label>
     <select name="lang" id="lang">
         <option value="eng">English</option>
         <option value="deu" selected>Deutsch</option>

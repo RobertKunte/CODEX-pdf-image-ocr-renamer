@@ -33,8 +33,9 @@ def preview(sid):
     if not data:
         abort(404)
     if request.method == 'POST':
+        engine = request.form.get('engine', 'tesseract')
         lang = request.form.get('lang', 'deu')
-        text = images_to_text(data['images'], lang=lang)
+        text = images_to_text(data['images'], lang=lang, engine=engine)
         text_file = os.path.join(data['dir'], 'output.txt')
         with open(text_file, 'w', encoding='utf-8') as f:
             f.write(text)
